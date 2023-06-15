@@ -1,0 +1,3 @@
+- ERROR AL INTERRUMPIR mostrarsecuencia() *menuDesliz.js*
+- Ocultar menus no seleccionados.
+- Agregar diseño principal de HOMEPAGE. /ANIMACION/
