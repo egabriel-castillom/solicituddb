@@ -1,3 +1,11 @@
-- ERROR AL INTERRUMPIR mostrarsecuencia() *menuDesliz.js*
-- Ocultar menus no seleccionados.
 - Agregar diseño principal de HOMEPAGE. /ANIMACION/
+   Aplicar diseño, con principios 'psicológicos' para el usuario
+   Que luzca lo más 'natural posible'
+   Conseguir diseñar los 'botónes', conseguir un fondo.
+- Agregar el diseño para cada vista segun el menu seleccioado
+- Al entrar un cada sección, hacer una transición de 
+'desvanecer' el menú, luego, se expande la página principal con el
+contenido.
+
+
+GITPUSH

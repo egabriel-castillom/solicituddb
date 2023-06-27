@@ -7,15 +7,121 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    position: relative;
 }
 
+@keyframes miAnimacionArriba {
+    0% {
+      top: calc(15% + 10px);
+      opacity: 1;
+    }
+    100% {
+      top: calc(-100% + 10px);
+      opacity: 0;
+    }
+}
+
+@keyframes miAnimacionAbajo {
+    0% {
+      bottom: calc(-100% + 10px);
+      opacity: 0;
+    }
+    100% {
+      bottom: calc(-6.5% + 10px);
+      opacity: 1;
+    }
+}
+
+@keyframes miAnimacionAbajoA {
+    0% {
+      bottom: calc(-100% + 10px);
+      opacity: 0;
+    }
+    100% {
+        bottom: calc(4% + 10px);
+      opacity: 1;
+    }
+}
+
+
+.animacionArriba {
+    animation-name: miAnimacionArriba;
+    animation-duration: 1s;
+}
+
+.animacionAbajo {
+    animation-name: miAnimacionAbajo;
+    animation-duration: 1s;
+}
+
+.animacionAbajoA {
+    animation-name: miAnimacionAbajoA;
+    animation-duration: 1s;
+}
+
+.animacionArribaR {
+    animation-name: miAnimacionArriba;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+.animacionAbajoR {
+    animation-name: miAnimacionAbajo;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+.animacionAbajoAR {
+    animation-name: miAnimacionAbajoA;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+
 .principal{
+    background-size: contain;
     height: 100%;
-    display: grid;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobreMi{
+    height: 10%;
+    width: 30%;
+    position: relative;
+}
+
+.portafolio{
+    height: 10%;
+    width: 30%;
+    position: relative;
+    display: none;
+}
+
+.contacto{
+    height: 10%;
+    width: 30%;
+    position: relative;
+    display: none;
+}
+
+.curriculum{
+    display: none;
+    height: 100%;
     place-items: center;
 }
 
-.principal button{
-    height: 20%;
-    width: 40%;
+.proyectos{
+    display: none;
+    height: 100%;
+    place-items: center;
+}
+
+.infoContacto{
+    display: none;
+    height: 100%;
+    place-items: center;
 }

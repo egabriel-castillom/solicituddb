@@ -1,11 +1,18 @@
+//Si se detecta algún a flecha en el teclado, se llama a la
+//función cambiar
+sessionStorage.setItem('running','no');
 document.addEventListener('keydown', function(event) {
 if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-    cambiar(event.key);
+    if (sessionStorage.getItem('running') !== 'yes'){
+        cambiar(event.key);
+        sessionStorage.setItem('running','yes');
+    }
+
 }
 });
 
 //Inicializar variable para controlar el botón actual.
-let idBoton = ['#iniciar','#memorama','#terminar'];
+let idBoton = ['#sobreMi','#portafolio','#contacto'];
 let idBValor = 0;
 let llamada = 0;
 sessionStorage.setItem('llamada0',JSON.stringify(llamada))
@@ -29,16 +36,18 @@ if (idBValor > 2){
 
 //Se comprueba si es que el boton seleccionado se encuentra ejecutando
 //una secuencia, de ser así no se permite interrumpirla
-console.log(idBValor.toString());
 if (JSON.parse(sessionStorage.getItem('llamada'+idBValor.toString())) !== 1){
     let botonActivo = idBoton[idBValor]
     const btn = document.querySelector(botonActivo);
     let nuevoContenido = btn.textContent;
-    
-    //Llamar a la función auxiliar para el primer carácter
+
+
+    //Llamar a la función de secuencia para el boton seleccionado
     if (JSON.parse(sessionStorage.getItem('llamada0')) === 0 || JSON.parse(sessionStorage.getItem('llamada1')) === 0 || JSON.parse(sessionStorage.getItem('llamada2')) === 0){
         mostrarSecuencia(0,btn,nuevoContenido,idBValor);
     };
 }
 
+//Llamar a la función que muestra el botón seleccionado
+mostrarSeleccion(idBValor, idBoton, direccion);
 };
