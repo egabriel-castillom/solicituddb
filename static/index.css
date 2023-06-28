@@ -1,5 +1,6 @@
 html{
     height: 100%;
+    overflow: hidden;
 }
 
 body{
@@ -12,7 +13,7 @@ body{
 
 @keyframes miAnimacionArriba {
     0% {
-      top: calc(15% + 10px);
+      top: calc(3% + 10px);
       opacity: 1;
     }
     100% {

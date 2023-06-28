@@ -11,6 +11,55 @@ if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
 }
 });
 
+//Si se detecta algún swipe en panatalla, se llama a la
+//función cambiar
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var yDown = null;                                                        
+
+function handleTouchStart(evt) {                                         
+    yDown = evt.touches[0].clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! yDown ) {
+        return;
+    }
+
+    var yUp = evt.touches[0].clientY;
+    var yDiff = yDown - yUp;
+
+    if (sessionStorage.getItem('running') !== 'yes'){
+        if ( yDiff > 0 ) {
+            /* down swipe */ 
+            cambiar('ArrowDown');
+        } else { 
+            /* up swipe */
+            cambiar('ArrowUp');
+        }
+        sessionStorage.setItem('running','yes');
+    }                                                                 
+    /* reset values */
+    yDown = null;                                             
+};
+
+//Si se detecta algún scroll en el, se llama a la
+//función cambiar
+document.addEventListener('wheel', handleWheel, false);
+
+function handleWheel(evt) {
+    if (sessionStorage.getItem('running') !== 'yes'){
+        if (evt.deltaY < 0) {
+            /* scroll up */
+            cambiar('ArrowUp');
+        } else {
+            /* scroll down */
+            cambiar('ArrowDown');
+        }
+        sessionStorage.setItem('running','yes');
+    }
+};
 //Inicializar variable para controlar el botón actual.
 let idBoton = ['#sobreMi','#portafolio','#contacto'];
 let idBValor = 0;
@@ -49,5 +98,14 @@ if (JSON.parse(sessionStorage.getItem('llamada'+idBValor.toString())) !== 1){
 }
 
 //Llamar a la función que muestra el botón seleccionado
-mostrarSeleccion(idBValor, idBoton, direccion);
+let idBotonSinHash = idBoton.map(function(id){ return id.slice(1)});   
+let idSeleccion = idBotonSinHash[idBValor];
+let seleccion = document.getElementById(idSeleccion);
+let todosBotones = document.querySelectorAll('button');
+if(direccion === 'ArrowDown'){
+    animacionAbajo(todosBotones,idSeleccion,seleccion)
+} else{
+    animacionArriba(todosBotones,idSeleccion,seleccion);
 };
+};
+
