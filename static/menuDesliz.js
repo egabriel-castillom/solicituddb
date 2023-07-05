@@ -93,7 +93,9 @@ if (JSON.parse(sessionStorage.getItem('llamada'+idBValor.toString())) !== 1){
 
     //Llamar a la función de secuencia para el boton seleccionado
     if (JSON.parse(sessionStorage.getItem('llamada0')) === 0 || JSON.parse(sessionStorage.getItem('llamada1')) === 0 || JSON.parse(sessionStorage.getItem('llamada2')) === 0){
-        mostrarSecuencia(0,btn,nuevoContenido,idBValor);
+        setTimeout (function () {
+            mostrarSecuencia(0,btn,nuevoContenido,idBValor);
+        },200);
     };
 }
 

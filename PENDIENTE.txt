@@ -1,4 +1,7 @@
 - Agregar diseño principal de HOMEPAGE. /ANIMACION/
+  *ORAGNIZAR Y COMENTAR CÓDIGO*
+  *Conseguir que hover anime la gota de agua.*
+  Agregar un diseño de texto como palabras 'flotantes, en color blanco con profunidad'
    Aplicar diseño, con principios 'psicológicos' para el usuario
    Que luzca lo más 'natural posible'
    Conseguir diseñar los 'botónes', conseguir un fondo.
