@@ -7,7 +7,6 @@ if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
         cambiar(event.key);
         sessionStorage.setItem('running','yes');
     }
-
 }
 });
 
@@ -67,9 +66,7 @@ let llamada = 0;
 sessionStorage.setItem('llamada0',JSON.stringify(llamada))
 sessionStorage.setItem('llamada1',JSON.stringify(llamada))
 sessionStorage.setItem('llamada2',JSON.stringify(llamada))
-
-//Funcion inicial para ejecutar secuencia a lo largo de 
-//el texto contenedor del botón
+//Funcion para cambiar el elemento visible en el menu incial
 function cambiar(direccion) {
 if (direccion ==='ArrowUp'){
     idBValor = idBValor - 1;
@@ -85,29 +82,24 @@ if (idBValor > 2){
 
 //Se comprueba si es que el boton seleccionado se encuentra ejecutando
 //una secuencia, de ser así no se permite interrumpirla
-if (JSON.parse(sessionStorage.getItem('llamada'+idBValor.toString())) !== 1){
-    let botonActivo = idBoton[idBValor]
-    const btn = document.querySelector(botonActivo);
-    let nuevoContenido = btn.textContent;
+//if (JSON.parse(sessionStorage.getItem('llamada'+idBValor.toString())) !== 1){
+//    let botonActivo = idBoton[idBValor]
+//    const btn = document.querySelector(botonActivo);
+//    let nuevoContenido = btn.textContent;
+//    setTimeout (function () {
+//        mostrarSecuencia(0,btn,nuevoContenido,idBValor);
+//    },200);
 
+//};
 
-    //Llamar a la función de secuencia para el boton seleccionado
-    if (JSON.parse(sessionStorage.getItem('llamada0')) === 0 || JSON.parse(sessionStorage.getItem('llamada1')) === 0 || JSON.parse(sessionStorage.getItem('llamada2')) === 0){
-        setTimeout (function () {
-            mostrarSecuencia(0,btn,nuevoContenido,idBValor);
-        },200);
-    };
-}
-
-//Llamar a la función que muestra el botón seleccionado
+//Llamar a la función que muestra el botón siguiente según el desplazamiento del menu.
 let idBotonSinHash = idBoton.map(function(id){ return id.slice(1)});   
 let idSeleccion = idBotonSinHash[idBValor];
 let seleccion = document.getElementById(idSeleccion);
 let todosBotones = document.querySelectorAll('button');
-if(direccion === 'ArrowDown'){
-    animacionAbajo(todosBotones,idSeleccion,seleccion)
-} else{
-    animacionArriba(todosBotones,idSeleccion,seleccion);
+    if(direccion === 'ArrowDown'){
+        animacionAbajo(todosBotones,idSeleccion,seleccion)
+    } else{
+        animacionArriba(todosBotones,idSeleccion,seleccion);
+    };
 };
-};
-

@@ -1,13 +1,16 @@
-function cambioMenu(nuevoContenido,elemento){
-    let elementoAnimado = document.getElementById(elemento);
-    elementoAnimado.classList.add('aguaAnimacion');
-    setTimeout( function() {
-        elementoAnimado.classList.remove('aguaAnimacion');
-        let ocultarMenu = document.querySelector(".principal");
-        ocultarMenu.style.display = "none";
-        let mostrarMenu = document.querySelector(nuevoContenido);
-        mostrarMenu.style.display = "grid";        
-    }, 1000);
-
-
+function mostrarOcultarElemento(elemento,accion){
+    let elementoUsado = document.querySelector(elemento);
+    if (accion=='mostrar'){
+        elementoUsado.style.display = "flex";
+    } else{
+        elementoUsado.style.display = "none";
+    };
 }
+
+//onclick="mostrarOcultarElemento('.mypopupframe','mostrar')"
+//onclick="mostrarOcultarElemento('.mypopupframe','ocultar')"
+//display: none;
+//position: absolute;
+//top: 0;
+//left: 0;
+//z-index: 1;

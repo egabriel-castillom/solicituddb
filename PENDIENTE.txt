@@ -1,14 +1,64 @@
-- Agregar diseño principal de HOMEPAGE. /ANIMACION/
-  *ORAGNIZAR Y COMENTAR CÓDIGO*
-  *Conseguir que hover anime la gota de agua.*
-  Agregar un diseño de texto como palabras 'flotantes, en color blanco con profunidad'
-   Aplicar diseño, con principios 'psicológicos' para el usuario
-   Que luzca lo más 'natural posible'
-   Conseguir diseñar los 'botónes', conseguir un fondo.
-- Agregar el diseño para cada vista segun el menu seleccioado
-- Al entrar un cada sección, hacer una transición de 
-'desvanecer' el menú, luego, se expande la página principal con el
-contenido.
+PRIMERO INVESTIGA, DESPUÉS DISEÑA, LUEGO CONSTRUYE.
+  Plantilla, estrucutra principal para página web.
+  Todo mediante scroll.
+	{BOTON ABOUT ME, MOSTRAR UNA PLANTILLA}
+-AI OUTCOME-
+Para sobreponer un div sobre otro y que el div hermano siga viéndose en el fondo, puedes utilizar las propiedades CSS position y z-index. Primero, asegúrate de que ambos divs tengan una posición establecida, como position: relative o position: absolute. Luego, establece un valor de z-index más alto para el div que deseas que aparezca en la capa superior. El valor de z-index determina el orden de apilamiento de los elementos, por lo que un elemento con un valor de z-index más alto se mostrará sobre un elemento con un valor de z-index más bajo.
 
+Aquí tienes un ejemplo de cómo podrías hacerlo:
+
+<div class="container">
+  <div class="background">Contenido de fondo</div>
+  <div class="overlay">Contenido de la capa superior</div>
+</div>
+
+<style>
+  .container {
+    position: relative;
+  }
+  .background {
+    position: relative;
+    z-index: 1;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+</style>
+Copiar
+En este ejemplo, el div con la clase .overlay se mostrará sobre el div con la clase .background debido a que tiene un valor de z-index más alto. También se le ha dado una posición absoluta para que se pueda posicionar en relación con su contenedor padre.
 
 GITPUSH
+
+
+CONTINÚA CON LAS SIGUIENTES SECCIONES Y POPUPS.
+  Llevar al proyecto mediante un click.
+  Animaciones sutiles en transiciones
+  Hacer una conexión con base de datos para almacenar información de formularios.
+
+import pymysql
+
+def obtener_conexion():
+    return pymysql.connect(
+        host='localhost',
+        user='root',
+        password='',
+        db='nombre_de_tu_base_de_datos'
+    )
+
+
+
+Aquí hay una lista de comandos útiles para crear y manejar una base de datos local en MySQL:
+
+CREATE DATABASE [database name]; - Crea una nueva base de datos.
+USE [database name]; - Selecciona la base de datos para su uso.
+CREATE TABLE [table name] (column1 datatype, column2 datatype, ...); - Crea una nueva tabla en la base de datos seleccionada.
+INSERT INTO [table name] (column1, column2, ...) VALUES (value1, value2, ...); - Inserta un nuevo registro en una tabla específica.
+SELECT * FROM [table name]; - Devuelve todos los registros de una tabla específica.
+UPDATE [table name] SET column1 = value1, column2 = value2, ... WHERE condition; - Actualiza registros existentes en una tabla específica que cumplan con una condición específica.
+DELETE FROM [table name] WHERE condition; - Elimina registros existentes en una tabla específica que cumplan con una condición específica.
+DROP TABLE [table name]; - Elimina una tabla específica de la base de datos.
+DROP DATABASE [database name]; - Elimina una base de datos específica.
+Estos son solo algunos comandos básicos para empezar a crear y manejar una base de datos local en MySQL. Hay muchos más comandos y opciones disponibles para realizar tareas más avanzadas.

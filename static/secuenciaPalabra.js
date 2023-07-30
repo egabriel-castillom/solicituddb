@@ -1,5 +1,6 @@
 // Función auxiliar para mostrar la secuencia de caracteres
 function mostrarSecuencia(i,btn,nuevoContenido,idBValor) {
+    //Un nuevo elemento(idBValor) es seleccionado para mostrar una secuencia.
     let llamada = 1;
     if (idBValor === 0){
         sessionStorage.setItem('llamada0',JSON.stringify(llamada));

@@ -1,0 +1,39 @@
+CODIGO.
+- (main.py) -
+	Mediante el framework Flask, se crea la función crear_app para 
+	ejecutar una aplicación con sus rutas especificas.
+	Desde la ruta principal se llama a la plantilla HTML de index.html
+-(index.html)-
+	Contiene toda la estructura de la aplicación web en cuestión de 
+	elementos html y se enlaza directamente a un archivo vanilla css.
+	Se registran los scripts de vanilla JavaScript que interactúan con 
+	los elementos de dicha plantilla en el elemento <head>.
+-(menuDesliz.js)-
+	Contiene 3 event listener. Uno para las flechas del teclado, otro
+	para el swipe de pantalla y otro para el scroll de un mouse. Los
+	cuales hacen llamada a la función cambiar() pasando la dirección 
+	hacia la cual el usuario quiere desplazar el menú deslizable.
+	Cambiar():
+		Selecciona el elemento que se posicionará visible en el menú
+		y llama a la función mostrarSecuencia()*secuenciaPalabra.js*, 
+		se controla la ejecución con variables de sesión para
+		cada elemento, de ésta manera se evita interrumpir la secuencia.
+		También se llama al archivo *animacionesArribaAbajo.js*,
+		dependiendo de hacia que dirección se quiere desplazar el
+		menú ya sea animacionAbajo() ó animacionArriba().
+-(secuenciaPalabra.js)-
+	En mostrarSecuencia() para el elemento seleccionado, una secuencia se 
+	ejecuta modificando el texto de dicho elemento el cual va mostrandose
+	de forma progresiva hasta llegar a mostrar el texto original.
+-(animacionesArribaAbajo.js)-
+	En animacionAbajo() y animacionArriba() se ejecuta un bucle for, 
+	para poder identificar qué elementos se encuentran 'visibles'.
+	Se identifica qué elemento es el original y qué elemento es la
+	nueva selección. A cada uno se le asigna una animación que genera
+	un efecto de 'desplazamiento' en el menu.
+	Despúes se retiran las animaciónes correspondientes, para dejar 
+	a los elementos listos para una nueva animación. 
+-(rutaBotones.js)-
+	Ṕermite que a la hora de elegir el botón que está en pantalla
+	se oculte el menú principal y la información correspondiente
+	sea mostrada.

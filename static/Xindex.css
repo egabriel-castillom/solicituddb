@@ -1,0 +1,221 @@
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    height: 98%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+}
+
+@keyframes miAnimacionArriba {
+    0% {
+      top: calc(10% + 10px);
+      opacity: 1;
+    }
+    100% {
+      top: calc(-100% + 10px);
+      opacity: 0;
+    }
+}
+
+@keyframes miAnimacionArribaA {
+  0% {
+    top: calc(-14% + 10px);
+    opacity: 1;
+  }
+  100% {
+    top: calc(-100% + 10px);
+    opacity: 0;
+  }
+}
+
+@keyframes miAnimacionAbajo {
+    0% {
+      bottom: calc(-100% + 10px);
+      opacity: 0;
+    }
+    100% {
+      bottom: calc(-14% + 10px);
+      opacity: 1;
+    }
+}
+
+@keyframes miAnimacionAbajoA {
+    0% {
+      bottom: calc(-100% + 10px);
+      opacity: 0;
+    }
+    100% {
+        bottom: calc(12% + 10px);
+      opacity: 1;
+    }
+}
+
+
+.animacionArriba {
+    animation-name: miAnimacionArriba;
+    animation-duration: 1s;
+}
+
+.animacionArribaA {
+  animation-name: miAnimacionArribaA;
+  animation-duration: 1s;
+}
+
+.animacionAbajo {
+    animation-name: miAnimacionAbajo;
+    animation-duration: 1s;
+}
+
+.animacionAbajoA {
+    animation-name: miAnimacionAbajoA;
+    animation-duration: 1s;
+}
+
+.animacionArribaR {
+    animation-name: miAnimacionArriba;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+.animacionArribaAR {
+  animation-name: miAnimacionArribaA;
+  animation-duration: 1s;
+  animation-direction: reverse;
+}
+
+.animacionAbajoR {
+    animation-name: miAnimacionAbajo;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+.animacionAbajoAR {
+    animation-name: miAnimacionAbajoA;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+
+.principal{
+    height: 100%;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('portForeverW.jpg');
+}
+
+.sobreMi{
+    background-color: rgb(81, 121, 253);
+    border-radius: 10%;
+    box-shadow: 5px 20px 5px #888888;
+    height: 10%;
+    width: 30%;
+    position: relative;
+}
+
+.portafolio{
+    background-color:rgb(255, 69, 69);
+    box-shadow: 5px 20px 5px #888888;
+    border-radius: 10%;
+    height: 10%;
+    width: 30%;
+    position: relative;
+    display: none;
+}
+
+.contacto{
+    background-color: rgb(57, 250, 153);
+    box-shadow: 5px 20px 5px #888888;
+    border-radius: 10%;
+    height: 10%;
+    width: 30%;
+    position: relative;
+    display: none;
+}
+
+.principal button{
+    text-stroke: 1px #000;
+    -webkit-text-stroke: 1px #000;
+    transition: all 1s;
+    height: 25%;
+    width: 15%;
+}
+
+
+.curriculum{
+    display: none;
+    height: 100%;
+    place-items: center;
+}
+
+.proyectos{
+    display: none;
+    height: 100%;
+    place-items: center;
+}
+
+.infoContacto{
+    display: none;
+    height: 100%;
+    place-items: center;
+}
+
+.principal button {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 80%;
+    background: #3498db;
+    background: radial-gradient(circle at 30% 107%, #3498db 0%, #3498db 5%, #2980b9 45%, #207cca 60%, #207cca 90%);
+    box-shadow: inset -15px -15px 30px rgba(255,255,255,0.125), inset -1px -1px 2px rgba(255,255,255,0.25), inset -2px -2px 4px rgba(255,255,255,0.25), inset -4px -4px 8px rgba(255,255,255,0.25), inset -8px -8px 16px rgba(255,255,255,0.25), inset -16px -16px 32px rgba(255,255,255,0.25), inset 15px 15px 30px rgba(0,0,0,0.125), inset 1px 1px 2px rgba(0,0,0,0.25), inset 2px 2px 4px rgba(0,0,0,0.25), inset 4px 4px 8px rgba(0,0,0,0.25), inset 8px 8px 16px rgba(0,0,0,0.25), inset 16px 16px 32px rgba(0,0,0,0.25);
+  }
+  
+  @keyframes jelly {
+    0%, 100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+  }
+
+  @keyframes jellyLento {
+    0%, 100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.95, 1.05);
+    }
+    50% {
+      transform: scale(1.05, 0.95);
+    }
+    75% {
+      transform: scale(0.975, 1.025);
+    }
+  }
+  
+  .aguaAnimacion {
+    animation: jelly 0.5s linear infinite;
+  }
+
+  .hoverA:hover {
+    animation: jellyLento 1.5s linear infinite;
+  }

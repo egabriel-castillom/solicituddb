@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" style="text/css" href="{{url_for('static',filename='index.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDO</title>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='animacionesArribaAbajo.js') }}"></script>
+    <script src="{{ url_for('static', filename='secuenciaPalabra.js') }}"></script>
+    <script src="{{ url_for('static', filename='menuDesliz.js') }}"></script>
+    <script src="{{ url_for('static', filename='rutaBotones.js') }}"></script>
+</head>
+<body>
+<!--    <script> 
+        $(document).ready(function() {
+            gameOverSave('#save');
+-->
+<div class="principal">
+    <button id="sobreMi" class="sobreMi hoverA" onclick="cambioMenu('.curriculum','sobreMi')"     style="display: inline;">¿ACERCA DE MI?</button>
+    <button id="portafolio" class="portafolio" onclick="cambioMenu('.proyectos','portafolio')">PORTAFOLIO</button>
+    <button id="contacto" class="contacto" onclick="cambioMenu('.infoContacto','contacto')">¡CONTÁCTAME!</button>
+</div>
+<div class="curriculum">
+    <h1>HOLA CURRICULUM</h1>
+</div>
+<div class="proyectos">
+    <h1>HOLA PROYECTO</h1>
+</div>
+<div class="infoContacto">
+    <h1>HOLA CONTACTO</h1>
+</div>
+</body>
+</html>
