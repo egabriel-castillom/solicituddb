@@ -34,7 +34,7 @@ GITPUSH
 
 
 CONTINÚA CON LAS SIGUIENTES SECCIONES Y POPUPS.
-  Llevar al proyecto mediante un click.
+  Agregar botón de vuelta al portafolio desde el proyecto Mem0
   Animaciones sutiles en transiciones
   Hacer una conexión con base de datos para almacenar información de formularios.
 
