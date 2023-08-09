@@ -13,6 +13,10 @@ async function loopWithDelay(srcList, imgElement) {
     for (let i = 0; i < srcList.length; i++) {
       let currentSrc = srcList[i];
       // Actualiza los atributos src y srcset del elemento <img>
+      imgElement.classList.add('aparecer'); // Agregamos la clase .aparecer al elemento
+        setTimeout(() => { // Esperamos a que termine la animación antes de ocultar el elemento
+            imgElement.classList.remove('aparecer'); // Removemos la clase .aparecer del elemento
+        }, 500);
       imgElement.src = currentSrc;
       imgElement.srcset = currentSrc + ' 500w,' + currentSrc + ' 800w,' + currentSrc + ' 816w';
       // Wait for 1 second before continuing to the next iteration

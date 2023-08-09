@@ -150,14 +150,17 @@ function setupForm() {
                         .then(data => {
                           $('#message').html('');  
                           $('#rf').html('');
-                          $('#cuenta-regresiva').html('RECORD: ' + sessionStorage.getItem('record')+' s.');
+                          $('#cuenta-regresiva').html(sessionStorage.getItem('record')+'s.');
                         })
                         .catch(error => console.error(error))
-                        let sv = document.getElementById('save')
-                        let rr = document.getElementById('restart')                      
-                        sv.style.display = 'inline'
+                        let boardChange = document.querySelector('.board');
+                        boardChange.classList.remove('board');
+                        boardChange.classList.add('boardAdj2');                       
+                        let sv = document.getElementById('save');
+                        let rr = document.getElementById('restart');                      
+                        sv.style.display = 'grid'
                         sv.style.marginRight = '20%'
-                        rr.style.display = 'inline'
+                        rr.style.display = 'grid'
                         rr.style.marginLeft = '20%'
                       }, 3000);                      
                   }

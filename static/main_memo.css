@@ -20,9 +20,23 @@ body {
 }
 
 #startMemo{
-    padding-top: 30%;
-    padding-bottom: 30%;
-}
+    width: 100%;
+    height: 42px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    display: flex;
+    box-shadow: 0 0 14px #66671f;
+    cursor: pointer;
+};
 
 .LEFT{
     height: inherit;
@@ -32,7 +46,7 @@ body {
     height: inherit;
     display: grid;
     place-items:center ;
-    grid-template-rows:.1fr 4.8fr .1fr ;
+    grid-template-rows:.1fr .1fr 4.7fr .1fr ;
     transition: all 0.2s;
 }
 
@@ -60,6 +74,24 @@ body {
     width: fit-content;
 }
 
+.boardAdj{
+    height: 100%;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transition: all 0.35s;
+}
+
+.boardAdj2{
+    height: 100%;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transition: all 0.35s;
+}
+
 .board{
     height: 100%;
     width: 50%;
@@ -78,8 +110,39 @@ body {
     display: none;
 }
 
+#restart button{
+    width: 100%;
+    height: 40px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    box-shadow: 0 0 14px #66671f;}
+
 #save {
     display: none;
+}
+
+#save button{
+    width: 100%;
+    height: 40px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    box-shadow: 0 0 14px #66671f;
 }
 
 .finalStage{
@@ -98,23 +161,38 @@ body {
 .cont {
     display: block;
     height: 80%;
-    width: 60%;
+    width: 100%;
 }
 
 .contMR {
     display: block;
-    height: 60%;
-    width: 70%
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
 }
 
 #myResults{
-    padding: 5%
+    height: auto;
 };
 
 .contR {
     display: block;
-    height: 60%;
-    width: 40%;
+}
+
+.contR button {
+    width: 100%;
+    height: 40px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    box-shadow: 0 0 14px #66671f;
 }
 
 .notCont {
@@ -178,19 +256,91 @@ body {
 
 @media (max-width: 646px) {
     .espacioJuego { 
-      padding-left:12% ;
       height: 100%;
       width: 95%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(6, 1fr);
     }
+    .boardAdj{
+        margin-left: -15%;
+    }
+    .boardAdj2{
+        margin-left: -43%;
+    }
+    .board{
+        margin-left: 0%;
+    }
+    .boardCorrecto{
+        margin-left: 0%;
+     }
+    .boardIncorrecto{
+        margin-left: 0%;
+     }
+    .tiempo{
+        margin-left: 0%;
+        width: 100%;
+    }
+    .espacioJuego{
+        margin-left: 7%;
+    }
     .MID{
         height: 100%;    
+        grid-template-rows:.1fr .5fr 4.4fr ;
     }
     .switch{
         font-size:15px ;
     };
   }
+
+  @media (max-width: 280px) {
+    .espacioJuego { 
+      height: 100%;
+      width: 95%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+    .boardAdj{
+        margin-left: -50%;
+    }
+    .boardAdj2{
+        margin-left: -50%;
+        width: 60%;
+    }
+    .finalStage{
+        width: 100%;
+        display: inline-block;
+        align-content:center ;
+    }
+    #save{
+        margin-left: 20%;
+    }
+    #save button{
+        width: 100%;
+    }
+    #restart button{
+        width: 100%;
+    }
+
+    .board{
+        margin-left: 0%;
+    }
+    .boardCorrecto{
+        margin-left: 0%;
+     }
+    .boardIncorrecto{
+        margin-left: 0%;
+     }
+    .tiempo{
+        width: 100%;
+    }
+    }
+    .MID{
+        height: 100%;    
+        grid-template-rows:.1fr .5fr 4.4fr ;
+    }
+    .switch{
+        font-size:15px ;
+    };
 
 .boardOnsel{
     text-align: center;
@@ -344,7 +494,89 @@ ul {
 #myButton {
     height: 100% ;
     width: 100% ;
-    padding: 2%;
-    margin-top: 2%;
-    margin-bottom: 5%
 };
+
+.container-128 {
+    grid-column-gap: 64px;
+    grid-row-gap: 64px;
+    flex: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+  }
+
+  .button-87 {
+    width: 60%;
+    height: 42px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 30px;
+    text-decoration: none;
+    display: flex;
+    box-shadow: 0 0 14px #af57c5;
+  }
+
+  .text-259 {
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.button-90 {
+    width: 100%;
+    height: 20px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    box-shadow: 0 0 14px #66671f;
+  }
+
+  .text-262 {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  button{
+    transition: all .5s;
+  }
+
+  button:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+    z-index: 9999;
+  }
+
+  #salir{
+    width: 100%;
+    height: 40px;
+    max-width: 270px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 53px;
+    text-decoration: none;
+    box-shadow: 0 0 14px #66671f;
+  }

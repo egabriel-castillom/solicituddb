@@ -34,8 +34,7 @@ GITPUSH
 
 
 CONTINÚA CON LAS SIGUIENTES SECCIONES Y POPUPS.
-  Agregar botón de vuelta al portafolio desde el proyecto Mem0
-  Animaciones sutiles en transiciones
+  MEM0 - Organizar ubicacion y responsividad de los menus.
   Hacer una conexión con base de datos para almacenar información de formularios.
 
 import pymysql

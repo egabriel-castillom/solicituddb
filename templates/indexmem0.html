@@ -10,13 +10,18 @@
 <link rel="stylesheet" style="text/css" href="{{url_for('static',filename='main_memo.css')}}">
 <body>
     <div id = "page-content" class="MID">
+        <div class="container-128">
+            <a href="{{url_for('index')}}" class="button-87">
+                <div class="text-259">Portfolio</div>
+            </a>
+        </div>         
         <form id="clear" class="carta" method="get">                    
-            <input class="noSwitch" type="submit" value="SALIR"/>                    
+             <button class="noSwitch" type="submit" id="salir">SALIR</button>                    
         </form>                
-        <div class="board">
+        <div class="boardAdj">
             <div class="tiempo" id="cuenta-regresiva"></div>
             <div id='container' class="cont">
-                <button id="myButton" onclick="changeText()">¿PERROS O GATOS?</button>
+                <button class="button-90" id="myButton" onclick="changeText()">¿PERROS O GATOS?</button>
                 <script>
                   function changeText() {
                     var button = document.getElementById("myButton");
@@ -34,14 +39,14 @@
             </form>    
             <div class="finalStage">
                 <form id="save" class="carta" method="get">                    
-                    <input class="switch" type="submit" value=" Guardar "/>             
+                    <button class="switch" type="submit" > Guardar </button>             
                 </form>    
                 <form id="restart" class="carta" method="get">                                    
-                    <input class="switch" type="submit" value=" Reiniciar"/>             
+                    <button class="switch" type="submit">Reiniciar </button>            
                 </form>    
             </div>
             <div id='container' class="contMR">
-                <button id="myResults" onclick="viewResults()">VER RESULTADOS</button>
+                <button class="button-90" id="myResults" onclick="viewResults()">VER RESULTADOS</button>
             </div>
             <div id="message" class="message"></div>
             <div id="rf" class="rf"></div>

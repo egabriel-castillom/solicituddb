@@ -15,7 +15,13 @@ for (let i = 0; i < marcos.length; i++) {
 
 function initStart(start,message) {      
     $(start).submit(function(event) {
+        let port4Button = document.querySelector('.container-128')
+            port4Button.classList.remove('container-128');
+            port4Button.classList.add('notCont');
         let idButton = document.getElementById("myButton");
+        let boardChange = document.querySelector('.boardAdj');
+        boardChange.classList.remove('boardAdj');
+        boardChange.classList.add('board');
         event.preventDefault();
         console.log(idButton.innerHTML);
         inGame();

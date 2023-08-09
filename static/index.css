@@ -19794,6 +19794,28 @@ textarea.w-input, textarea.w-select {
   z-index: 1;
 }
 
+.aparecer {
+animation-name: aparecer;
+animation-duration: .5s; 
+animation-fill-mode: forwards;
+}
+
+@keyframes aparecer {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.desaparecer{
+animation-name: desaparecer;
+animation-duration: .5s;
+animation-fill-mode: forwards;
+}
+
+@keyframes desaparecer {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
 .mypopup-30 {
   width: 100%;
   height: 578px;
