@@ -155,13 +155,16 @@ function setupForm() {
                         .catch(error => console.error(error))
                         let boardChange = document.querySelector('.board');
                         boardChange.classList.remove('board');
-                        boardChange.classList.add('boardAdj2');                       
+                        boardChange.classList.add('boardAdj2'); 
                         let sv = document.getElementById('save');
                         let rr = document.getElementById('restart');                      
                         sv.style.display = 'grid'
                         sv.style.marginRight = '20%'
                         rr.style.display = 'grid'
                         rr.style.marginLeft = '20%'
+                        let tiempo2 = document.querySelector('.tiempo');                      
+                        tiempo2.classList.remove('tiempo');
+                        tiempo2.classList.add('tiempo2');
                       }, 3000);                      
                   }
                   }          

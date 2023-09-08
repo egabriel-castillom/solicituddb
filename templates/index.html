@@ -16,6 +16,25 @@
     <link href="https://uploads-ssl.webflow.com/img/webclip.png" rel="apple-touch-icon" />
     <script src="{{url_for('static',filename='rutaBotones.js')}}"></script>
     <script src="{{url_for('static',filename='slideShow.js')}}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(function() {
+            $('a#send').bind('click', function() {
+                var data1 = document.getElementById("name").value;
+                var data2 = document.getElementById("email").value;
+                var data3 = document.getElementById("message").value;
+                $.ajax({
+                    type: "POST",
+                    url: "/db",
+                    data: {data1: data1, data2: data2, data3: data3},
+                    success: function(data) {
+                        // Haz algo aquí con los datos recibidos
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
 </head>
 <body class="all">
     <div class="about-me-61">
@@ -129,15 +148,15 @@
                 <div class="mymessage">
                     <div class="title-12">SEND ME A MESSAGE! </div>
                     <div class="mybutton-71 wf-section">
-                        <input class="input" placeholder="First and last name"></input> 
+                        <input id="name" class="input" placeholder="First and last name"></input> 
                     </div>
                     <div class="mybutton-72 wf-section">
-                        <input class="input" placeholder="Email adress."></input> 
+                        <input id="email" class="input" placeholder="Email adress."></input> 
                     </div>
                     <div class="mybutton-73 wf-section">
-                        <textarea class="input-3" placeholder="send me a message"></textarea> 
+                        <textarea id="message" class="input-3" placeholder="send me a message"></textarea> 
                     </div>
-                    <div class="mybutton-74 wf-section"><a target="_blank" class="button-84" onclick="mostrarOcultarElemento('.sendmessage','ocultar')" style="cursor:pointer;">
+                    <div class="mybutton-74 wf-section"><a id="send" target="_blank" class="button-84" onclick="mostrarOcultarElemento('.sendmessage','ocultar')" style="cursor:pointer;">
                             <div class="about-me-63">SEND</div>
                         </a></div>
                 </div>

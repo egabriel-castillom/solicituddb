@@ -32,21 +32,25 @@ En este ejemplo, el div con la clase .overlay se mostrará sobre el div con la c
 
 GITPUSH
 
-
-CONTINÚA CON LAS SIGUIENTES SECCIONES Y POPUPS.
-  MEM0 - Organizar ubicacion y responsividad de los menus.
-  Hacer una conexión con base de datos para almacenar información de formularios.
-
 import pymysql
 
-def obtener_conexion():
-    return pymysql.connect(
-        host='localhost',
+def get_connection():
+    connection = pymysql.connect(
+        host='127.0.0.1',
         user='root',
-        password='',
-        db='nombre_de_tu_base_de_datos'
+        password='NUNC4m13nt!',
+        db='test'
     )
+  return connection
 
+def execute_query(connection, query, params=None):
+    """Ejecuta una consulta SQL en la base de datos."""
+    with connection.cursor() as cursor:
+        cursor.execute(query, params)
+        return cursor.fetchall()
+
+results = execute_query(get_connection(),'SELECT * FROM users')
+print(results)
 
 
 Aquí hay una lista de comandos útiles para crear y manejar una base de datos local en MySQL:
@@ -60,4 +64,9 @@ UPDATE [table name] SET column1 = value1, column2 = value2, ... WHERE condition;
 DELETE FROM [table name] WHERE condition; - Elimina registros existentes en una tabla específica que cumplan con una condición específica.
 DROP TABLE [table name]; - Elimina una tabla específica de la base de datos.
 DROP DATABASE [database name]; - Elimina una base de datos específica.
-Estos son solo algunos comandos básicos para empezar a crear y manejar una base de datos local en MySQL. Hay muchos más comandos y opciones disponibles para realizar tareas más avanzadas.
+ALTER TABLE miTabla ADD COLUMN nuevaColumna VARCHAR(255) AFTER columnaExistente;
+ALTER TABLE miTabla ADD COLUMN nuevaColumna VARCHAR(255) AFTER columnaExistente;
+
+
+CONTINÚA CON LAS SIGUIENTES SECCIONES Y POPUPS. 
+  Hosting.... HOW TO ONLINE HOST?

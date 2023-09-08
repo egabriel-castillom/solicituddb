@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, render_template,session,request
 from dotenv import load_dotenv
+from db import get_connection,execute_query
+from sendEmail import send_email
 import click
 import os
 import time
@@ -125,6 +127,25 @@ def crear_app():
                 P = 0            
                 session.clear()
                 return jsonify(x='')
+
+    @app.route('/db', methods=['POST'])
+    def db():
+        name = request.form['data1']
+        email = request.form['data2']
+        message = request.form['data3']
+        query = 'INSERT INTO users (uname,uemail,umessage) VALUES (%s,%s,%s)'
+        params = (name,email,message)
+        results = execute_query(get_connection(),query,params)        
+
+        subject = "Email test from Portfolio"
+        sender = "senderfromportfolio@gmail.com"
+        receiver = "receiverfromportfolio@gmail.com"
+        body = 'New message from ' + name + ' (' + email + ') :' + message
+        password = "zphmjzagipcdjusy"
+
+        send_email(subject, sender, receiver, body, password)
+        
+        return 'n'
 
     return app
 

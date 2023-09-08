@@ -15,6 +15,7 @@ for (let i = 0; i < marcos.length; i++) {
 
 function initStart(start,message) {      
     $(start).submit(function(event) {
+        document.getElementById('startMemo').style.display = 'none';  
         let port4Button = document.querySelector('.container-128')
             port4Button.classList.remove('container-128');
             port4Button.classList.add('notCont');
@@ -41,8 +42,7 @@ function initStart(start,message) {
                     }
                     if (idButton.innerHTML === 'Gatos') {
                         cats();
-                    }
-                    document.getElementById('startMemo').style.display = 'none';     
+                    }   
                 }
             });    
             if (sessionStorage.getItem('myDict') === null){

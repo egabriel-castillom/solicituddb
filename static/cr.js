@@ -18,6 +18,9 @@
             //El tiempo se ha acabado, entoces finalstage 
             //sólo puede mostrar 1 elemento a la vez
             modCssColumn('.finalStage', '1fr')
+            let boardChange = document.querySelector('.board');
+            boardChange.classList.remove('board');
+            boardChange.classList.add('boardAdj3'); 
             setTimeout(function() {
                 let valor1 = '1'
                 fetch('/get-data?valor1=' + valor1,{method:'GET',headers: {'Content-Type':'application/json'}})
