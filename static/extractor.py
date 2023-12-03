@@ -1,3 +1,25 @@
+import cssutils
+
+def extract_styles(css, elements, classes):
+    sheet = cssutils.parseString(css)
+    styles = ''
+
+    for rule in sheet:
+        if rule.type == rule.STYLE_RULE:
+            selector = rule.selectorText
+            # Check if the selector matches any of the elements or classes
+            if any(element in selector for element in elements) or any('.'+cls in selector for cls in classes):
+                styles += selector + ' {\n'
+                for prop in rule.style:
+                    styles += '    {}: {};\n'.format(prop.name, prop.value)
+                styles += '}\n\n'
+
+    # Write the styles to a new CSS file
+    with open('new.css', 'w') as f:
+        f.write(styles)
+
+# Your CSS goes here
+css = """
 
 html {
   -ms-text-size-adjust: 100%;
@@ -16136,3 +16158,9 @@ textarea.w-input, textarea.w-select {
       align-items: center;
     }
   }
+"""
+
+elements = ['div', 'input', 'label', 'textarea']
+classes = ['overlay', 'close', 'contact-form-3', 'container-22', 'section-title', 'get-in-touch', 'text-128', 'form-wrapper', 'w-form', 'form', 'input-wrapper', 'form-block-label', 'form-text-input-4', 'w-input', 'form-text-input-3', 'form-textarea', 'form-button', 'w-button', 'enviado', 'w-form-fail']
+
+extract_styles(css, elements, classes)
